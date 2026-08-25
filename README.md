@@ -50,29 +50,86 @@ images/
 README.md
 
 Analytical Workflow
-Day 1: Data Quality
+Day 1: Data Quality and Preparation
 
-Business question:
+Business Question: Can we trust the available data before analysing the A/B test?
 
-Can we trust the data?
+The Client Profiles, Experiment Roster, and Digital Footprints datasets were inspected for missing values, duplicates, data types, identifier consistency, experimental assignment, and customer journey anomalies.
 
-The four source files were inspected for structure, missing values, duplicates, identifier consistency, unusual values, outliers, experimental coverage, and customer journey data quality.
+Key findings and decisions:
 
-Day 2: Customer Profile and Group Comparability
+client_id was retained as the primary client level identifier and experimental unit. The Client Profiles and Experiment Roster contain the same 70,609 unique clients.
+Missing demographic values were not imputed because the amount of missing data was very small and replacing them would require unsupported assumptions.
+The two Digital Footprints files were combined into one event dataset. date_time was converted to datetime to support chronological journey analysis.
+Exact duplicate web events were removed, reducing the event dataset from 755,405 to 744,641 records. Repeated actions occurring at different timestamps were retained because they may represent genuine customer behaviour.
+Customer sessions will be identified using client_id together with visit_id because some visit_id values are associated with multiple clients.
+Multiple starts, multiple confirms, incomplete journeys, repeated steps, backward navigation, and unusually long sessions were retained rather than automatically removed. These behaviours may represent genuine retries, abandonment, correction, navigation difficulty, or inactivity and will be handled according to the KPI being calculated.
 
-Business question:
+Conclusion: The data is sufficiently reliable to proceed. However, customer journeys require explicit preprocessing rules, and experimental comparisons should use only clients with valid Test or Control assignments.
 
-Who are Vanguard's customers, and are the Test and Control groups comparable?
+### Day 2: Customer Profile and Group Comparability
 
-Client demographics, account characteristics, and historical engagement were compared between Test and Control before analyzing experimental outcomes.
+**Business question:**
 
-Day 3: Customer Journey Analysis
+Who are Vanguard's customers, and are the Test and Control groups comparable before evaluating experimental outcomes?
 
-Business question:
+**Activities completed:**
 
-How do customers navigate through the process?
+1. Restricted direct A/B comparison to clients assigned to Test or Control.
+2. Examined customer age distributions.
+3. Compared gender composition between the experimental groups.
+4. Analyzed client tenure.
+5. Compared number of accounts.
+6. Examined account balance distributions.
+7. Investigated account balance outliers and skewness.
+8. Compared historical telephone engagement using calls.
+9. Compared historical digital engagement using logons.
+10. Used descriptive statistics and visualizations to assess baseline comparability.
+11. Reviewed mean, median, distribution shape, and outlier behaviour where appropriate.
+12. Documented methodological decisions before analyzing experimental outcomes.
 
-Customer sessions and journey events will be reconstructed to evaluate funnel progression, completion, abandonment, repeated actions, backward navigation, and process bottlenecks.
+**Result:**
+
+The Test and Control groups appear descriptively comparable across the observed baseline customer characteristics. Formal statistical equivalence is not assumed and will be evaluated separately where appropriate.
+
+### Day 3: Customer Journey Analysis
+
+**Business question:**
+
+How do customers navigate through the digital process, and does the redesigned Test experience improve customer behaviour?
+
+**Activities completed:**
+
+1. Reconstructed customer journeys using client_id and visit_id.
+2. Ordered digital events chronologically using date_time.
+3. Identified journey starts and confirmations.
+4. Evaluated chronological funnel progression from start through confirmation.
+5. Calculated completion rate by experimental group.
+6. Calculated stage level funnel conversion and drop off.
+7. Calculated total completion time for valid completed journeys.
+8. Calculated effective progression time across chronological funnel stages.
+9. Investigated completion time distributions and outliers.
+10. Identified backward navigation using the ordered process sequence.
+11. Calculated step back counts and step back rates.
+12. Examined the distribution and severity of step back behaviour.
+13. Calculated abandonment rate among started journeys.
+14. Compared all major KPIs between Control and Test.
+15. Validated KPI populations, missing values, distributions, unexpected values, and outliers.
+16. Documented KPI assumptions and methodological limitations.
+17. Prepared the analytical datasets for formal statistical analysis.
+
+**Key descriptive results:**
+
+| KPI | Control | Test |
+| --- | ---: | ---: |
+| Completion Rate | 48.26% | 54.07% |
+| Median Completion Time | 4.12 minutes | 3.33 minutes |
+| Step Back Rate | 20.23% | 26.80% |
+| Abandonment Rate | 51.74% | 45.93% |
+
+The Test experience shows higher completion, lower abandonment, and faster median completion time. However, Test also shows a higher step back rate, indicating that the redesigned experience may introduce additional backward navigation or customer friction.
+
+These descriptive differences will be formally evaluated during Day 4 statistical analysis.
 
 Day 4: Statistical Analysis
 
@@ -90,542 +147,340 @@ What should Vanguard do?
 
 Statistical evidence, customer experience findings, and business relevance will be combined into the final deployment recommendation.
 
-Data Quality Decisions
-Client Identifier
+# Analytical Decision Documentation
 
-Finding:
+This section records the main analytical decisions made during the first two stages of the Vanguard A/B test project. Detailed code, validation and statistical outputs are available in the corresponding notebooks.
 
-The Client Profiles and Experiment Roster each contain 70,609 unique clients. No duplicate client_id values were found, and both datasets contain exactly the same client population.
+## Day 1: Data Quality and Preparation
 
-Decision:
+### Dataset Integration
 
-client_id is retained as the experimental unit and primary client level identifier.
+**Decision:** Combine the demographic data, experiment roster and web event data using the appropriate customer identifiers.
 
-Reason:
+**Reason:** The datasets provide complementary information required for the experiment. Demographic data describes the customers, the experiment roster identifies Control and Test assignment, and the web logs record customer interactions with the digital process.
 
-The project documentation defines client_id as the experimental unit, and the data quality checks support its uniqueness.
+### Missing Values
 
-Missing Client Profile Data
+**Decision:** Missing values were investigated before analysis rather than automatically removed.
 
-Finding:
+**Reason:** Removing incomplete observations without understanding their source could unnecessarily reduce the sample or introduce bias. Missing information was handled according to its analytical relevance.
 
-Only 15 clients contain missing demographic information.
+### Duplicate Records
 
-Fourteen clients have all profile variables missing except client_id. One additional client is missing only clnt_age.
+**Decision:** Exact duplicate events were treated as data quality issues, while repeated process steps were investigated separately rather than automatically classified as duplicates.
 
-Among experimental clients, 7 affected clients belong to Test and 6 belong to Control.
+**Reason:** Repeated steps can represent genuine customer behaviour, such as retrying a step or navigating backward, and therefore contain useful information about the customer journey.
 
-Decision:
+### Identifier Selection
 
-Missing demographic values will not be imputed.
+**Decision:** Different identifiers are used according to the analytical question.
 
-Reason:
+`client_id` represents the customer and is used for customer level analysis.
 
-The proportion of missing data is extremely small. Creating replacement demographic or financial values would introduce unsupported assumptions.
+`visitor_id` represents the digital visitor identity.
 
-Impact:
+`visit_id` represents an individual web session and is used to reconstruct customer journeys.
 
-Analyses requiring a missing variable will use available observations only.
+**Reason:** The web dataset contains event level observations. Treating every event as an independent customer or completed journey would produce incorrect KPI calculations.
 
-Gender Categories
+### Experimental Assignment
 
-Finding:
+**Decision:** Experimental assignments were validated before comparing Control and Test.
 
-The gendr field contains:
+**Reason:** Each client used in the experiment must have a reliable treatment assignment. Experimental metadata cannot be assumed to be correct without checking completeness, uniqueness and consistency.
 
-F
+### Repeated Process Steps
 
-M
+**Decision:** Repeated `step_1`, `step_2` and `step_3` events were retained.
 
-U
+Repeated `step_1` occurred in approximately 18.37% of sessions, repeated `step_2` in 11.53%, and repeated `step_3` in 7.14%.
 
-X
+**Reason:** These events may represent genuine customer behaviour and can provide evidence of friction, hesitation or navigation difficulties. Removing them would remove useful journey information.
 
-and missing values.
+### Multiple Starts and Confirms
 
-The supplied metadata does not define the meaning of U or X.
+**Decision:** Multiple `start` and `confirm` events were investigated rather than automatically deleted.
 
-Decision:
+**Reason:** They may represent repeated attempts, navigation behaviour or tracking characteristics. Their meaning depends on the sequence of events within each visit.
 
-The original gender categories will be preserved.
+### Backward Navigation
 
-U will not be changed to Gender Neutral.
+**Decision:** Backward navigation was retained as part of the customer journey.
 
-Reason:
+**Reason:** Moving backward through the process may indicate usability friction and is therefore analytically meaningful when evaluating the digital experience.
 
-There is no evidence in the source documentation that U represents Gender Neutral. Recoding it would introduce an unsupported interpretation.
+### Exceptionally Long Sessions
 
-Impact:
+**Decision:** Long sessions were identified using the IQR method but were not automatically removed.
 
-If clearer presentation labels are required later, a separate derived field may be created while preserving the original source column.
+The upper IQR threshold was approximately 13.83 minutes and approximately 7.89% of sessions exceeded this threshold.
 
-Client Age
+**Reason:** Long sessions may result from genuine behaviour, inactivity, interrupted sessions or tracking characteristics. Duration alone is insufficient evidence that a session is invalid.
 
-Finding:
+### Day 1 Decision
 
-The experimental population ranges from 17 to 96 years old.
+The data was considered sufficiently reliable for subsequent analysis after the identified quality issues and journey complexities were documented.
 
-No IQR age outliers were identified.
+Unusual customer journeys were generally retained when there was insufficient evidence that they represented data errors. This preserves genuine customer behaviour for later KPI and journey analysis.
 
-The full Client Profiles dataset contains 374 clients below age 18.
 
-Decision:
+## Day 2: Control and Test Group Comparability
 
-Age observations will be retained.
+### Comparison Strategy
 
-Reason:
+**Decision:** Control and Test groups were compared using demographic, financial and historical engagement characteristics before analysing experimental outcomes.
 
-The IQR analysis did not identify age outliers in the experimental population, and age alone does not provide sufficient evidence that a record is invalid.
+**Reason:** Differences that existed before exposure to the new digital experience could potentially confound the interpretation of the A/B test.
 
-Age and Tenure Consistency
+Relative distributions, descriptive statistics and statistical tests were used because the Control and Test groups have different sample sizes.
 
-Finding:
+### Age
 
-574 clients have recorded tenure in years greater than their recorded age.
+**Decision:** Age was tested using an independent samples t test after evaluating the relevant assumptions.
 
-This represents approximately 0.81% of the Client Profiles dataset.
+The test produced `p = 0.0157` and Cohen's `d = 0.0216`.
 
-Decision:
+**Decision:** Reject H0 statistically, but treat the difference as practically negligible.
 
-These records will be retained but documented as a data quality limitation.
+**Reason:** Although statistically significant, the effect size is extremely small and does not indicate a meaningful age imbalance.
 
-Reason:
+### Gender
 
-The available data does not establish whether age or tenure is incorrect.
+**Decision:** Gender was evaluated using a Chi square test after removing the extremely rare `X` category because its expected frequencies violated the assumptions of the test.
 
-Impact:
+The final test produced `p = 0.3910` and Cramér's `V = 0.0061`.
 
-These observations should not be automatically corrected because doing so would require an unsupported assumption.
+**Decision:** Fail to reject H0.
 
-Tenure Year and Month Consistency
+**Reason:** There is insufficient evidence of a meaningful association between gender distribution and experimental assignment.
 
-Finding:
+### Client Tenure
 
-clnt_tenure_yr and clnt_tenure_mnth were compared.
+**Decision:** Client tenure was evaluated using the Mann Whitney U test.
 
-The average absolute difference between tenure in years and tenure calculated from months was approximately 0.50 years.
+The result produced `p = 0.0869` and effect size `r = 0.0076`.
 
-The maximum difference was 1 year.
+**Decision:** Fail to reject H0.
 
-Decision:
+**Reason:** The groups showed no statistically significant tenure difference and the effect size was negligible.
 
-The tenure variables are considered internally consistent.
+### Number of Accounts
 
-Reason:
+**Decision:** Number of accounts was evaluated using the Mann Whitney U test.
 
-The observed differences are small and consistent with one field providing a less precise representation of tenure.
+The result produced `p = 0.0302` and `r = 0.0069`.
 
-Impact:
+**Decision:** Reject H0 statistically, but treat the difference as practically negligible.
 
-Where more precise tenure is required, clnt_tenure_mnth will be preferred.
+**Reason:** The statistical difference has an extremely small effect size and does not represent a meaningful baseline imbalance.
 
-Tenure Outliers
+### Account Balance
 
-Finding:
+**Decision:** Account balance was evaluated using the Mann Whitney U test.
 
-The IQR method identified 599 tenure outliers above 31 years among experimental clients.
+The result produced `p = 0.1486` and `r = 0.0064`.
 
-This represents approximately 1.19% of clients with available tenure information.
+**Decision:** Fail to reject H0.
 
-Outlier rates were:
+**Reason:** There is insufficient statistical evidence of a balance difference, and the measured effect size is negligible.
 
-Test: approximately 1.21%
+### Calls in the Previous Six Months
 
-Control: approximately 1.16%
+**Decision:** Historical call activity was evaluated using the Mann Whitney U test.
 
-Decision:
+The result produced `p = 0.0005` and `r = 0.0153`.
 
-Tenure outliers will be retained.
+**Decision:** Reject H0 statistically, but treat the difference as practically negligible.
 
-Reason:
+**Reason:** The large sample makes very small differences detectable statistically. The effect size demonstrates that the magnitude of the difference is negligible.
 
-Long term Vanguard client relationships are plausible, and the outliers are similarly distributed between Test and Control.
+### Logons in the Previous Six Months
 
-Account Balance Outliers
+**Decision:** Historical digital engagement was evaluated using the Mann Whitney U test.
 
-Finding:
+The result produced `p = 0.0008` and `r = 0.0147`.
 
-Account balance is strongly right skewed.
+**Decision:** Reject H0 statistically, but treat the difference as practically negligible.
 
-The experimental population contains 5,728 IQR balance outliers, representing approximately 11.35% of clients with available balance information.
+**Reason:** Although statistically significant, the magnitude of the difference is too small to represent a meaningful imbalance between the groups.
 
-Outlier rates were:
+### Statistical Versus Practical Significance
 
-Test: approximately 11.15%
+**Decision:** Experimental comparability was not determined from p values alone.
 
-Control: approximately 11.57%
+**Reason:** The large sample size means very small differences can become statistically significant. Effect sizes and descriptive differences were therefore considered alongside hypothesis test results.
 
-Decision:
+Age, number of accounts, calls and logons were statistically significant, but all showed negligible effect sizes.
 
-Balance outliers will be retained.
+Gender, tenure and balance did not show statistically significant differences.
 
-Reason:
+### Day 2 Decision
 
-High account balances are plausible in an investment management context and may represent commercially important customers.
+The Control and Test groups were considered sufficiently comparable for subsequent A/B test analysis.
 
-Removing them would exclude a substantial client segment.
+No substantial demographic, financial or historical engagement imbalance was identified that would make the experimental comparison materially unfair.
 
-Impact:
+Statistically significant baseline differences will still be acknowledged when interpreting later results, but their negligible effect sizes indicate that they are not material threats to the validity of the experiment.
 
-Both mean and median balance will be reported because the mean is strongly influenced by high value accounts.
 
-Experiment Assignment
+## Overall Decision After Days 1 and 2
 
-Finding:
+The project can proceed to customer journey and KPI analysis.
 
-The Experiment Roster contains:
+Day 1 established that the data is sufficiently reliable for analysis while preserving unusual but potentially meaningful customer behaviour.
 
-Test: 26,968 clients
+Day 2 established that the Control and Test groups are sufficiently comparable at baseline.
 
-Control: 23,532 clients
+Together, these decisions provide the analytical foundation for evaluating whether Vanguard's redesigned digital experience changes customer behaviour and performance outcomes.
 
-No recorded Variation: 20,109 clients
+## Day 3 Customer Journey and KPI Decisions
 
-Decision:
+### Journey Identifier
 
-Direct A/B comparisons will include only clients assigned to Test or Control.
+**Decision:**
 
-Reason:
+Customer journeys are identified using the combination of `client_id` and `visit_id`.
 
-Clients without a known experimental assignment cannot be validly classified into either experiment group.
+**Reason:**
 
-Experimental Coverage
+Some `visit_id` values are associated with multiple clients. Using `visit_id` alone could incorrectly combine interactions belonging to different customers.
 
-Finding:
+### Experimental Population
 
-All 50,500 Test and Control clients appear in the Digital Footprints dataset.
+**Decision:**
 
-No experimental participant is completely missing from the web interaction data.
+Only customers assigned to Test or Control are included in direct experimental comparisons.
 
-Decision:
+**Reason:**
 
-The 50,500 assigned clients form the primary experimental population.
+Customers without a recorded experimental assignment cannot be reliably classified into either group.
 
-Additional Web Clients
+### Journey Ordering
 
-Finding:
+**Decision:**
 
-The Digital Footprints dataset contains 120,157 unique clients.
+Events within each customer journey are ordered chronologically using `date_time`.
 
-A total of 49,548 web clients do not appear in the Experiment Roster.
+**Reason:**
 
-Decision:
+Chronological ordering is necessary to reconstruct funnel progression, identify backward navigation, and calculate valid completion times.
 
-These clients will be excluded from direct Test versus Control comparisons.
+### Repeated Process Events
 
-Reason:
+**Decision:**
 
-Their experimental assignment is unknown.
+Repeated process events with different timestamps are retained.
 
-Their raw interactions remain preserved in the original data.
+**Reason:**
 
-Digital Footprints Combination
+They may represent genuine customer behaviour such as restarting, reconsidering, repeating a step, or navigating backward. Only exact duplicate event records were removed during data quality preparation.
 
-Finding:
+### Completion Rate
 
-Digital Footprints Part 1 and Part 2 contain identical columns and compatible data types.
+**Decision:**
 
-Decision:
+Completion is measured at the journey level among journeys with an observed start.
 
-The two web files are combined vertically before journey analysis.
+A journey is considered completed when it subsequently reaches confirmation.
 
-Reason:
+**Reason:**
 
-They represent two parts of the same event dataset.
+Restricting the denominator to started journeys provides a meaningful measure of whether customers who entered the process successfully completed it.
 
-Date and Time
+### Completion Time
 
-Finding:
+**Decision:**
 
-date_time was initially stored as text.
+Completion time is measured only for valid completed journeys with observable chronological start and confirmation events.
 
-The recorded web activity ranges from March 15, 2017 to June 20, 2017, matching the documented experiment period.
+The primary completion time KPI is elapsed time from start to confirmation.
 
-Decision:
+**Reason:**
 
-date_time is converted to a pandas datetime data type.
+Incomplete journeys or journeys without a reliable starting event cannot provide a valid full completion duration.
 
-Reason:
+### Completion Time Outliers
 
-Chronological ordering is required for customer journey reconstruction and completion time analysis.
+**Decision:**
 
-Exact Duplicate Web Events
+Exceptionally long completion times are identified using the IQR method but are not automatically removed.
 
-Finding:
+**Reason:**
 
-The combined Digital Footprints dataset initially contains 755,405 events.
+Long durations may represent genuine interruptions or difficult customer journeys. Removing them without evidence could hide meaningful customer behaviour.
 
-A total of 10,764 additional exact duplicate rows were identified.
+Median completion time is emphasized because the distribution is right skewed.
 
-The duplicates contain identical:
+### Effective Time
 
-client_id
+**Decision:**
 
-visitor_id
+Effective time is calculated from chronological forward progression through start, step_1, step_2, step_3, and confirm.
 
-visit_id
+**Reason:**
 
-process_step
+This provides an additional measure of progression time while reducing the influence of repeated or nonprogressive activity.
 
-date_time
+### Step Back Definition
 
-Decision:
+**Decision:**
 
-Exact duplicate copies are removed.
+A step back occurs when the numerical position of the current process step is lower than the immediately preceding process step within the same client and visit journey.
 
-The cleaned Digital Footprints dataset contains 744,641 events.
+**Reason:**
 
-Reason:
+This provides a reproducible behavioural definition of backward navigation without automatically assuming that every backward movement is an error.
 
-When every recorded event attribute is identical, the additional copy does not provide evidence of a separate customer interaction.
+### Step Back Rate
 
-Important:
+**Decision:**
 
-Repeated process steps with different timestamps are retained because they may represent genuine customer behaviour.
+Step back rate is measured as the percentage of journeys containing at least one backward navigation event.
 
-Visitor Identifier Conflicts
+Individual backward movements are also counted to evaluate the severity of repeated step back behaviour.
 
-Finding:
+**Reason:**
 
-1,645 visitor_id values are associated with more than one client_id.
+The journey level rate measures how frequently customers encounter backward navigation, while the count provides additional information about repeated friction.
 
-Decision:
+### Abandonment Rate
 
-The issue is documented rather than corrected.
+**Decision:**
 
-Reason:
+Abandonment is measured among started journeys.
 
-The source data does not establish whether this represents shared devices, identifier mapping behaviour, or another cause.
+A started journey is classified as abandoned when it does not reach confirmation.
 
-Visit Identifier Conflicts
+**Reason:**
 
-Finding:
+This definition directly measures failure to complete after entering the digital process.
 
-1,012 visit_id values are associated with more than one client_id.
+Under this methodology, completion and abandonment are complementary outcomes and therefore should not be interpreted as independent KPIs in statistical testing.
 
-Decision:
+### KPI Analytical Populations
 
-Customer session analysis will use the combination of:
+**Decision:**
 
-client_id
+Each KPI uses the population required by its analytical definition rather than forcing every KPI to use an identical sample.
 
-and
+Final analytical populations are:
 
-visit_id
+1. Completion and abandonment: 64,181 started journeys.
+2. Completion time: 32,561 valid completed journeys.
+3. Step back analysis: 69,447 experiment journeys.
 
-Reason:
+**Reason:**
 
-Using visit_id alone could combine interactions belonging to different clients.
+Different KPIs require different eligibility criteria. Completion time requires a valid completed journey, while navigation behaviour can be observed in journeys that do not ultimately complete.
 
-Multiple Start Events
+### Statistical Testing
 
-Finding:
+**Decision:**
 
-49,873 client sessions contain more than one start event.
+Day 3 focuses on KPI construction, descriptive comparison, validation, and statistical preparation.
 
-This represents approximately 31.34% of client sessions.
+Formal inferential conclusions will be made during Day 4.
 
-Decision:
+**Reason:**
 
-Multiple start events are retained.
-
-Reason:
-
-Exact duplicate events have already been removed. Remaining repeated starts occur at different timestamps and may represent genuine customer restarts or repeated attempts.
-
-Multiple Confirm Events
-
-Finding:
-
-8,248 client sessions contain multiple confirm events.
-
-This represents approximately 5.18% of sessions.
-
-Decision:
-
-Multiple confirm events are retained during initial journey reconstruction.
-
-Reason:
-
-They may represent genuine customer actions and require journey level interpretation rather than automatic deletion.
-
-Sessions Without Start
-
-Finding:
-
-13,277 sessions have no recorded start.
-
-This represents approximately 8.34% of sessions.
-
-Decision:
-
-These sessions are retained for navigation analysis.
-
-However, they will not be used straightforwardly for full start to confirm completion time calculations.
-
-Reason:
-
-A full journey duration cannot be calculated reliably when the starting event is not observed.
-
-Sessions Without Confirm
-
-Finding:
-
-68,474 sessions contain no recorded confirm.
-
-This represents approximately 43.04% of sessions.
-
-Decision:
-
-These sessions are retained.
-
-Reason:
-
-They may represent incomplete or abandoned customer journeys.
-
-Removing them would create survivorship bias and would undermine the analysis of process completion.
-
-Backward Navigation
-
-Finding:
-
-62,880 backward navigation events were identified.
-
-39,949 sessions contain at least one backward transition.
-
-This represents approximately 25.11% of sessions.
-
-The most frequent backward transition is:
-
-step_1 to start
-
-Decision:
-
-Backward navigation events are retained and analyzed as potential indicators of customer friction.
-
-Reason:
-
-Backward movement may represent correction, reconsideration, restart behaviour, or navigation difficulty.
-
-It should not automatically be classified as an error.
-
-Day 2 Baseline Comparability Decisions
-Age
-
-Finding:
-
-Test and Control show very similar age distributions.
-
-Control mean age: approximately 47.50 years
-
-Test mean age: approximately 47.16 years
-
-Control median: 48.5 years
-
-Test median: 47.5 years
-
-Decision:
-
-No descriptive age imbalance is identified.
-
-Age is approximately symmetric but does not closely follow a normal distribution.
-
-Formal statistical testing is reserved for the statistical analysis stage.
-
-Gender
-
-Finding:
-
-The proportions of F, M, and U are very similar between Test and Control.
-
-Decision:
-
-Gender composition is considered descriptively balanced.
-
-Original category labels are preserved.
-
-Tenure
-
-Finding:
-
-Control mean tenure: approximately 12.09 years
-
-Test mean tenure: approximately 11.98 years
-
-Both groups have a median tenure of 11 years.
-
-Decision:
-
-No meaningful descriptive tenure imbalance is identified.
-
-Number of Accounts
-
-Finding:
-
-Control mean: approximately 2.26 accounts
-
-Test mean: approximately 2.25 accounts
-
-Both groups have a median of 2 accounts.
-
-Approximately 78.25% of Control clients and 79.04% of Test clients have 2 accounts.
-
-Decision:
-
-Number of accounts is considered descriptively balanced.
-
-Account Balance
-
-Finding:
-
-Control mean balance: approximately $150,147
-
-Test mean balance: approximately $148,963
-
-Control median: approximately $66,024
-
-Test median: approximately $65,468
-
-Decision:
-
-Balance is considered descriptively similar between the groups.
-
-Because the distribution is strongly right skewed, median values and outlier rates are considered alongside the mean.
-
-Calls
-
-Finding:
-
-Control mean calls: approximately 3.13
-
-Test mean calls: approximately 3.06
-
-Both groups have a median of 3 calls.
-
-Decision:
-
-Historical telephone engagement is considered descriptively similar.
-
-Logons
-
-Finding:
-
-Control mean logons: approximately 6.17
-
-Test mean logons: approximately 6.10
-
-Both groups have a median of 6 logons.
-
-Decision:
-
-Historical digital engagement is considered descriptively similar.
-
-Current Analytical Conclusion
-
-After completing Days 1 and 2, the data is considered suitable for continued A/B analysis with documented limitations.
-
-The Test and Control groups appear descriptively comparable across the observed baseline client characteristics.
-
-This does not yet establish statistical equivalence.
-
-Formal statistical testing will be performed separately after customer journeys and business KPIs have been constructed.
+Observed differences between Test and Control should not be interpreted as statistically meaningful until the appropriate hypothesis tests, assumptions, effect sizes, and business relevance are evaluated.
