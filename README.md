@@ -35,11 +35,13 @@ The project aims to answer:
 ```text
 Week_6_Project/
 │
-├── data/
-│   ├── raw/
-│   └── cleaned/
-│       ├── experiment_clients.csv
-│       └── web_clean.csv
+data/
+    raw/
+    cleaned/
+        experiment_clients.csv
+        web_clean.csv
+        client_kpi_analysis.csv
+        client_completion_time.csv
 │
 ├── notebooks/
 │   ├── 01_data_quality.ipynb
@@ -309,6 +311,38 @@ Unusual Journeys
 Repeated steps, multiple starts, multiple confirmations, backward navigation, incomplete journeys, and unusually long sessions were investigated rather than automatically deleted.
 
 These behaviours may contain meaningful evidence about customer experience.
+
+### Day 3B: Client Level KPI Analysis
+
+The primary A/B test KPIs were reconstructed at the client level because Vanguard assigned experimental variation by `client_id`.
+
+Each randomized client contributes one independent observation to the primary experimental analysis.
+
+The final experimental population contains 50,500 unique clients:
+
+Control: 23,532 clients
+
+Test: 26,968 clients
+
+#### Client Level KPI Results
+
+| KPI | Control | Test |
+| --- | ---: | ---: |
+| Completion Rate | 65.59% | 69.29% |
+| Noncompletion Rate | 34.41% | 30.71% |
+| Median Completion Time | 4.52 minutes | 3.95 minutes |
+| Step Back Rate | 26.10% | 33.41% |
+| Mean Step Back Count | 0.41 | 0.60 |
+
+Completion is defined as reaching `confirm` at least once.
+
+Completion time is calculated only for clients with a valid start followed by confirmation within the same journey. When a client has multiple successful journeys, the first successful completion is retained.
+
+Step Back Rate measures the percentage of randomized clients who experienced at least one backward navigation event.
+
+Journey level metrics from Notebook 03 remain useful as secondary funnel diagnostics, while the primary A/B test uses the client as the independent analytical unit.
+
+The client level KPI datasets were saved for statistical analysis in Day 4.
 
 Day 2 Decisions
 Baseline Comparability
