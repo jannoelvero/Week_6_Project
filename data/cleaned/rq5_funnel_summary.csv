@@ -1,0 +1,9 @@
+Transition,Variation,Conversion Rate
+Start to Step 1,Control,85.8315
+Start to Step 1,Test,90.7118
+Step 1 to Step 2,Control,92.4623
+Step 1 to Step 2,Test,91.6595
+Step 2 to Step 3,Control,93.0617
+Step 2 to Step 3,Test,93.6023
+Step 3 to Confirm,Control,87.9865
+Step 3 to Confirm,Test,88.3339
