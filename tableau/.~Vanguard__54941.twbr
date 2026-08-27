@@ -1,0 +1,2641 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0708.1337                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='09d130143b6c989ab93bf5ef08bb10bfb72d30217549632893954da001437361' _.fcp.WorkbookFingerprinting.true...creator-author-id='09d130143b6c989ab93bf5ef08bb10bfb72d30217549632893954da001437361' _.fcp.WorkbookFingerprinting.true...creator-license-type='public' _.fcp.WorkbookFingerprinting.true...creator-machine-id='09d130143b6c989ab93bf5ef08bb10bfb72d30217549632893954da001437361' _.fcp.WorkbookFingerprinting.true...license-type='public' _.fcp.WorkbookFingerprinting.true...machine-id='09d130143b6c989ab93bf5ef08bb10bfb72d30217549632893954da001437361' original-version='18.1' source-build='2026.2.1 (20262.26.0708.1337)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='Dashboard_17878229527820' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='rq5_funnel_summary' inline='true' name='federated.093pwuw1iuceaq1c87y0e0dh5fvi' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='rq5_funnel_summary' name='textscan.1rmiq1f1ih5ld7153sp4b01z3sn8'>
+            <connection class='textscan' directory='/Users/jannoelvero/Documents/Ironhack/week_6/Week_6_Project/data/cleaned' filename='rq5_funnel_summary.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1rmiq1f1ih5ld7153sp4b01z3sn8' name='rq5_funnel_summary.csv' table='[rq5_funnel_summary#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+            <column datatype='string' name='Transition' ordinal='0' />
+            <column datatype='string' name='Variation' ordinal='1' />
+            <column datatype='real' name='Conversion Rate' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[rq5_funnel_summary.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₱&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_PH&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Transition</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Transition]</local-name>
+            <parent-name>[rq5_funnel_summary.csv]</parent-name>
+            <remote-alias>Transition</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[rq5_funnel_summary.csv_307966989255425A9528F42AC408BF52]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variation]</local-name>
+            <parent-name>[rq5_funnel_summary.csv]</parent-name>
+            <remote-alias>Variation</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[rq5_funnel_summary.csv_307966989255425A9528F42AC408BF52]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Conversion Rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Conversion Rate]</local-name>
+            <parent-name>[rq5_funnel_summary.csv]</parent-name>
+            <remote-alias>Conversion Rate</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rq5_funnel_summary.csv_307966989255425A9528F42AC408BF52]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Conversion Rate %' datatype='real' name='[Conversion Rate]' role='measure' type='quantitative' />
+      <column caption='rq5_funnel_summary.csv' datatype='table' name='[__tableau_internal_object_id__].[rq5_funnel_summary.csv_307966989255425A9528F42AC408BF52]' role='measure' type='quantitative' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/tableau-temp/#TableauTemp_07mp9dq0oh7cq316bvswr0gjgjn2.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='08/26/2026 04:01:21 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Transition</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Transition]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Transition</remote-alias>
+              <ordinal>0</ordinal>
+              <family>rq5_funnel_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[rq5_funnel_summary.csv_307966989255425A9528F42AC408BF52]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Variation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Variation]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Variation</remote-alias>
+              <ordinal>1</ordinal>
+              <family>rq5_funnel_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[rq5_funnel_summary.csv_307966989255425A9528F42AC408BF52]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Conversion Rate</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Conversion Rate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Conversion Rate</remote-alias>
+              <ordinal>2</ordinal>
+              <family>rq5_funnel_summary.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[rq5_funnel_summary.csv_307966989255425A9528F42AC408BF52]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='rq5_funnel_summary.csv' id='rq5_funnel_summary.csv_307966989255425A9528F42AC408BF52'>
+            <properties context=''>
+              <relation connection='textscan.1rmiq1f1ih5ld7153sp4b01z3sn8' name='rq5_funnel_summary.csv' table='[rq5_funnel_summary#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+                  <column datatype='string' name='Transition' ordinal='0' />
+                  <column datatype='string' name='Variation' ordinal='1' />
+                  <column datatype='real' name='Conversion Rate' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='web_clean' inline='true' name='federated.0hle4pa1ltg6wf0zwvne90v79tuo' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='web_clean' name='textscan.00rxaoc04gq5uq0zw2m400z3otxe'>
+            <connection class='textscan' directory='/Users/jannoelvero/Documents/Ironhack/week_6/Week_6_Project/data/cleaned' filename='web_clean.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.00rxaoc04gq5uq0zw2m400z3otxe' name='web_clean.csv' table='[web_clean#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+              <column datatype='integer' name='client_id' ordinal='0' />
+              <column datatype='string' name='visitor_id' ordinal='1' />
+              <column datatype='string' name='visit_id' ordinal='2' />
+              <column datatype='string' name='process_step' ordinal='3' />
+              <column datatype='datetime' name='date_time' ordinal='4' />
+              <column datatype='integer' name='step_number' ordinal='5' />
+              <column datatype='real' name='previous_step' ordinal='6' />
+              <column datatype='boolean' name='backward_navigation' ordinal='7' />
+            </columns>
+          </relation>
+          <relation connection='textscan.00rxaoc04gq5uq0zw2m400z3otxe' name='experiment_clients.csv' table='[experiment_clients#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+              <column datatype='integer' name='client_id' ordinal='0' />
+              <column datatype='string' name='Variation' ordinal='1' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Variation]' value='[experiment_clients.csv].[Variation]' />
+          <map key='[backward_navigation]' value='[web_clean.csv].[backward_navigation]' />
+          <map key='[client_id (experiment_clients.csv)]' value='[experiment_clients.csv].[client_id]' />
+          <map key='[client_id]' value='[web_clean.csv].[client_id]' />
+          <map key='[date_time]' value='[web_clean.csv].[date_time]' />
+          <map key='[previous_step]' value='[web_clean.csv].[previous_step]' />
+          <map key='[process_step]' value='[web_clean.csv].[process_step]' />
+          <map key='[step_number]' value='[web_clean.csv].[step_number]' />
+          <map key='[visit_id]' value='[web_clean.csv].[visit_id]' />
+          <map key='[visitor_id]' value='[web_clean.csv].[visitor_id]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[web_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₱&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_PH&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[experiment_clients.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₱&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_PH&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_id]</local-name>
+            <parent-name>[web_clean.csv]</parent-name>
+            <remote-alias>client_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>visitor_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[visitor_id]</local-name>
+            <parent-name>[web_clean.csv]</parent-name>
+            <remote-alias>visitor_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>visit_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[visit_id]</local-name>
+            <parent-name>[web_clean.csv]</parent-name>
+            <remote-alias>visit_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>process_step</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[process_step]</local-name>
+            <parent-name>[web_clean.csv]</parent-name>
+            <remote-alias>process_step</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_time</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[date_time]</local-name>
+            <parent-name>[web_clean.csv]</parent-name>
+            <remote-alias>date_time</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>step_number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[step_number]</local-name>
+            <parent-name>[web_clean.csv]</parent-name>
+            <remote-alias>step_number</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>previous_step</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[previous_step]</local-name>
+            <parent-name>[web_clean.csv]</parent-name>
+            <remote-alias>previous_step</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>backward_navigation</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[backward_navigation]</local-name>
+            <parent-name>[web_clean.csv]</parent-name>
+            <remote-alias>backward_navigation</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_id (experiment_clients.csv)]</local-name>
+            <parent-name>[experiment_clients.csv]</parent-name>
+            <remote-alias>client_id</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variation]</local-name>
+            <parent-name>[experiment_clients.csv]</parent-name>
+            <remote-alias>Variation</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Start to Step 1 Conversion' datatype='real' name='[Calculation_1893878419312642]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD(&#10;    IF [process_step] = &quot;step_1&quot;&#10;    THEN [client_id]&#10;    END&#10;)&#10;/&#10;COUNTD(&#10;    IF [process_step] = &quot;start&quot;&#10;    THEN [client_id]&#10;    END&#10;)' />
+      </column>
+      <column caption='Step 1 to Step 2 Conversion' datatype='real' name='[Calculation_1893878419484675]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IIF([process_step] = &quot;step_2&quot;, 1, 0))&#10;/&#10;SUM(IIF([process_step] = &quot;step_1&quot;, 1, 0))' />
+      </column>
+      <column caption='Step 2 to Step 3 Conversion' datatype='real' name='[Calculation_1893878419615748]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IIF([process_step] = &quot;step_3&quot;, 1, 0))&#10;/&#10;SUM(IIF([process_step] = &quot;step_2&quot;, 1, 0))' />
+      </column>
+      <column caption='Step 3 to Confirm Conversion' datatype='real' name='[Calculation_1893878419738629]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IIF([process_step] = &quot;confirm&quot;, 1, 0))&#10;/&#10;SUM(IIF([process_step] = &quot;step_3&quot;, 1, 0))' />
+      </column>
+      <column datatype='string' name='[Variation]' role='dimension' type='nominal' />
+      <column caption='experiment_clients.csv' datatype='table' name='[__tableau_internal_object_id__].[experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2]' role='measure' type='quantitative' />
+      <column caption='web_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]' role='measure' type='quantitative' />
+      <column caption='Backward Navigation' datatype='boolean' name='[backward_navigation]' role='dimension' type='nominal' />
+      <column caption='Client Id (Experiment Clients.Csv)' datatype='integer' name='[client_id (experiment_clients.csv)]' role='dimension' type='ordinal' />
+      <column caption='Client Id' datatype='integer' name='[client_id]' role='dimension' type='ordinal' />
+      <column caption='Date Time' datatype='datetime' name='[date_time]' role='dimension' type='ordinal' />
+      <column caption='Previous Step' datatype='real' name='[previous_step]' role='measure' type='quantitative' />
+      <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal' />
+      <column caption='Step Number' datatype='integer' name='[step_number]' role='dimension' type='ordinal' />
+      <column caption='Visit Id' datatype='string' name='[visit_id]' role='dimension' type='nominal' />
+      <column caption='Visitor Id' datatype='string' name='[visitor_id]' role='dimension' type='nominal' />
+      <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/tableau-temp/#TableauTemp_0dx0zej0mvuheh1g3uajw0ngg8t1.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='08/26/2026 01:59:52 PM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE' table='[Extract].[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]' type='table' />
+            <relation name='experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2' table='[Extract].[experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Variation]' value='[experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2].[Variation]' />
+            <map key='[backward_navigation]' value='[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE].[backward_navigation]' />
+            <map key='[client_id (experiment_clients.csv)]' value='[experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2].[client_id]' />
+            <map key='[client_id]' value='[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE].[client_id]' />
+            <map key='[date_time]' value='[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE].[date_time]' />
+            <map key='[previous_step]' value='[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE].[previous_step]' />
+            <map key='[process_step]' value='[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE].[process_step]' />
+            <map key='[step_number]' value='[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE].[step_number]' />
+            <map key='[visit_id]' value='[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE].[visit_id]' />
+            <map key='[visitor_id]' value='[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE].[visitor_id]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>client_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[client_id]</local-name>
+              <parent-name>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</parent-name>
+              <remote-alias>client_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>web_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>294478</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>visitor_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[visitor_id]</local-name>
+              <parent-name>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</parent-name>
+              <remote-alias>visitor_id</remote-alias>
+              <ordinal>1</ordinal>
+              <family>web_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>302737</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>visit_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[visit_id]</local-name>
+              <parent-name>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</parent-name>
+              <remote-alias>visit_id</remote-alias>
+              <ordinal>2</ordinal>
+              <family>web_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>333011</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>process_step</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[process_step]</local-name>
+              <parent-name>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</parent-name>
+              <remote-alias>process_step</remote-alias>
+              <ordinal>3</ordinal>
+              <family>web_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date_time</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[date_time]</local-name>
+              <parent-name>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</parent-name>
+              <remote-alias>date_time</remote-alias>
+              <ordinal>4</ordinal>
+              <family>web_clean.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>669204</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>step_number</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[step_number]</local-name>
+              <parent-name>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</parent-name>
+              <remote-alias>step_number</remote-alias>
+              <ordinal>5</ordinal>
+              <family>web_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>previous_step</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[previous_step]</local-name>
+              <parent-name>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</parent-name>
+              <remote-alias>previous_step</remote-alias>
+              <ordinal>6</ordinal>
+              <family>web_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>backward_navigation</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[backward_navigation]</local-name>
+              <parent-name>[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]</parent-name>
+              <remote-alias>backward_navigation</remote-alias>
+              <ordinal>7</ordinal>
+              <family>web_clean.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>client_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[client_id (experiment_clients.csv)]</local-name>
+              <parent-name>[experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2]</parent-name>
+              <remote-alias>client_id</remote-alias>
+              <ordinal>8</ordinal>
+              <family>experiment_clients.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>70609</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Variation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Variation]</local-name>
+              <parent-name>[experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2]</parent-name>
+              <remote-alias>Variation</remote-alias>
+              <ordinal>9</ordinal>
+              <family>experiment_clients.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Variation:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Test&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Control&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='experiment_clients.csv' id='experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2'>
+            <properties context=''>
+              <relation connection='textscan.00rxaoc04gq5uq0zw2m400z3otxe' name='experiment_clients.csv' table='[experiment_clients#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+                  <column datatype='integer' name='client_id' ordinal='0' />
+                  <column datatype='string' name='Variation' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2' table='[Extract].[experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2]' type='table' />
+            </properties>
+          </object>
+          <object caption='web_clean.csv' id='web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE'>
+            <properties context=''>
+              <relation connection='textscan.00rxaoc04gq5uq0zw2m400z3otxe' name='web_clean.csv' table='[web_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+                  <column datatype='integer' name='client_id' ordinal='0' />
+                  <column datatype='string' name='visitor_id' ordinal='1' />
+                  <column datatype='string' name='visit_id' ordinal='2' />
+                  <column datatype='string' name='process_step' ordinal='3' />
+                  <column datatype='datetime' name='date_time' ordinal='4' />
+                  <column datatype='integer' name='step_number' ordinal='5' />
+                  <column datatype='real' name='previous_step' ordinal='6' />
+                  <column datatype='boolean' name='backward_navigation' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE' table='[Extract].[web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[client_id]' />
+              <expression op='[client_id (experiment_clients.csv)]' />
+            </expression>
+            <first-end-point object-id='web_clean.csv_B48FDE7FCE60459B8D944C74DA4615BE' />
+            <second-end-point object-id='experiment_clients.csv_A8E3CBBB13074345BCAB4770DD0F31C2' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+    <datasource caption='client_kpi_analysis' inline='true' name='federated.0i0p1xn0ow6q811f94ssc1sbdbe8' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='client_kpi_analysis' name='textscan.1j4u3kc1tjovld139reyz17a3bcs'>
+            <connection class='textscan' directory='/Users/jannoelvero/Documents/Ironhack/week_6/Week_6_Project/data/cleaned' filename='client_kpi_analysis.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1j4u3kc1tjovld139reyz17a3bcs' name='client_kpi_analysis.csv' table='[client_kpi_analysis#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+            <column datatype='integer' name='client_id' ordinal='0' />
+            <column datatype='string' name='Variation' ordinal='1' />
+            <column datatype='boolean' name='completed' ordinal='2' />
+            <column datatype='boolean' name='has_start' ordinal='3' />
+            <column datatype='boolean' name='not_completed' ordinal='4' />
+            <column datatype='integer' name='step_back_count' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[client_kpi_analysis.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₱&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_PH&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_id]</local-name>
+            <parent-name>[client_kpi_analysis.csv]</parent-name>
+            <remote-alias>client_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variation]</local-name>
+            <parent-name>[client_kpi_analysis.csv]</parent-name>
+            <remote-alias>Variation</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>completed</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[completed]</local-name>
+            <parent-name>[client_kpi_analysis.csv]</parent-name>
+            <remote-alias>completed</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>has_start</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[has_start]</local-name>
+            <parent-name>[client_kpi_analysis.csv]</parent-name>
+            <remote-alias>has_start</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>not_completed</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[not_completed]</local-name>
+            <parent-name>[client_kpi_analysis.csv]</parent-name>
+            <remote-alias>not_completed</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>step_back_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[step_back_count]</local-name>
+            <parent-name>[client_kpi_analysis.csv]</parent-name>
+            <remote-alias>step_back_count</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Completion Rate' datatype='real' name='[Calculation_1893878409637888]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(INT([completed])) / COUNT([client_id])' />
+      </column>
+      <column caption='Step Back Rate' datatype='real' name='[Calculation_1893878411362305]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(INT([step_back_count] &gt; 0)) / COUNT([client_id])' />
+      </column>
+      <column datatype='string' name='[Variation]' role='dimension' type='nominal' />
+      <column caption='client_kpi_analysis.csv' datatype='table' name='[__tableau_internal_object_id__].[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]' role='measure' type='quantitative' />
+      <column caption='Client Id' datatype='integer' name='[client_id]' role='dimension' type='ordinal' />
+      <column caption='Completed' datatype='boolean' name='[completed]' role='dimension' type='nominal' />
+      <column caption='Has Start' datatype='boolean' name='[has_start]' role='dimension' type='nominal' />
+      <column caption='Not Completed' datatype='boolean' name='[not_completed]' role='dimension' type='nominal' />
+      <column caption='Step Back Count' datatype='integer' name='[step_back_count]' role='measure' type='quantitative' />
+      <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Variation)' hidden='true' name='[Action (Variation)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Variation]' />
+        </groupfilter>
+      </group>
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/tableau-temp/#TableauTemp_0k5ae3p1t8j32y10tcxat129yk8m.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='08/26/2026 12:59:47 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>client_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[client_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>client_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>client_kpi_analysis.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>50500</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Variation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Variation]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Variation</remote-alias>
+              <ordinal>1</ordinal>
+              <family>client_kpi_analysis.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>completed</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[completed]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>completed</remote-alias>
+              <ordinal>2</ordinal>
+              <family>client_kpi_analysis.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>has_start</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[has_start]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>has_start</remote-alias>
+              <ordinal>3</ordinal>
+              <family>client_kpi_analysis.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>not_completed</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[not_completed]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>not_completed</remote-alias>
+              <ordinal>4</ordinal>
+              <family>client_kpi_analysis.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>step_back_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[step_back_count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>step_back_count</remote-alias>
+              <ordinal>5</ordinal>
+              <family>client_kpi_analysis.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Variation:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Control&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Test&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='client_kpi_analysis.csv' id='client_kpi_analysis.csv_48362F0920F446BD8B2BC30CB312B62F'>
+            <properties context=''>
+              <relation connection='textscan.1j4u3kc1tjovld139reyz17a3bcs' name='client_kpi_analysis.csv' table='[client_kpi_analysis#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+                  <column datatype='integer' name='client_id' ordinal='0' />
+                  <column datatype='string' name='Variation' ordinal='1' />
+                  <column datatype='boolean' name='completed' ordinal='2' />
+                  <column datatype='boolean' name='has_start' ordinal='3' />
+                  <column datatype='boolean' name='not_completed' ordinal='4' />
+                  <column datatype='integer' name='step_back_count' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='funnel_boundaries' inline='true' name='federated.0tlnkwc0kxt3251dn9bjr0xcfpbk' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='funnel_boundaries' name='textscan.052or8s0zfog3b1cak2dr0dkfyk4'>
+            <connection class='textscan' directory='/Users/laracacador/Downloads' filename='funnel_boundaries.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.052or8s0zfog3b1cak2dr0dkfyk4' name='funnel_boundaries.csv' table='[funnel_boundaries#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+            <column datatype='string' name='boundary' ordinal='0' />
+            <column datatype='string' name='direction' ordinal='1' />
+            <column datatype='real' name='control' ordinal='2' />
+            <column datatype='real' name='test' ordinal='3' />
+            <column datatype='real' name='difference' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[funnel_boundaries.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>boundary</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[boundary]</local-name>
+            <parent-name>[funnel_boundaries.csv]</parent-name>
+            <remote-alias>boundary</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>direction</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[direction]</local-name>
+            <parent-name>[funnel_boundaries.csv]</parent-name>
+            <remote-alias>direction</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>control</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[control]</local-name>
+            <parent-name>[funnel_boundaries.csv]</parent-name>
+            <remote-alias>control</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>test</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[test]</local-name>
+            <parent-name>[funnel_boundaries.csv]</parent-name>
+            <remote-alias>test</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>difference</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[difference]</local-name>
+            <parent-name>[funnel_boundaries.csv]</parent-name>
+            <remote-alias>difference</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Highlight' datatype='string' name='[Calculation_2748061812633600]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [boundary] = &quot;Start / Step 1&quot; THEN &quot;The boundary that moved&quot;&#10;ELSE &quot;Other boundaries&quot; END' />
+      </column>
+      <column caption='funnel_boundaries.csv' datatype='table' name='[__tableau_internal_object_id__].[funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6]' role='measure' type='quantitative' />
+      <column caption='Boundary' datatype='string' name='[boundary]' role='dimension' type='nominal' />
+      <column caption='Control' datatype='real' name='[control]' role='measure' type='quantitative' />
+      <column caption='Difference' datatype='real' name='[difference]' role='measure' type='quantitative' />
+      <column caption='Direction' datatype='string' name='[direction]' role='dimension' type='nominal' />
+      <column caption='Test' datatype='real' name='[test]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_2748061812633600]' derivation='None' name='[none:Calculation_2748061812633600:nk]' pivot='key' type='nominal' />
+      <column-instance column='[direction]' derivation='None' name='[none:direction:nk]' pivot='key' type='nominal' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/tableau-temp 1/#TableauTemp_1xae4xn1pxvhnb1cqe3uq0uyexaf.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='08/27/2026 09:17:15 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>boundary</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[boundary]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>boundary</remote-alias>
+              <ordinal>0</ordinal>
+              <family>funnel_boundaries.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>direction</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[direction]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>direction</remote-alias>
+              <ordinal>1</ordinal>
+              <family>funnel_boundaries.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>control</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[control]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>control</remote-alias>
+              <ordinal>2</ordinal>
+              <family>funnel_boundaries.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>test</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[test]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>test</remote-alias>
+              <ordinal>3</ordinal>
+              <family>funnel_boundaries.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>difference</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[difference]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>difference</remote-alias>
+              <ordinal>4</ordinal>
+              <family>funnel_boundaries.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:direction:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;Forward conversion (\%)&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Backward events (per 100 clients)&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_2748061812633600:nk]' type='palette'>
+            <map to='#b07aa1'>
+              <bucket>&quot;The boundary that moved&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Other boundaries&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='funnel_boundaries.csv' id='funnel_boundaries.csv_B2CD4E7A5E5241FB9F0F10CB2827D3C6'>
+            <properties context=''>
+              <relation connection='textscan.052or8s0zfog3b1cak2dr0dkfyk4' name='funnel_boundaries.csv' table='[funnel_boundaries#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+                  <column datatype='string' name='boundary' ordinal='0' />
+                  <column datatype='string' name='direction' ordinal='1' />
+                  <column datatype='real' name='control' ordinal='2' />
+                  <column datatype='real' name='test' ordinal='3' />
+                  <column datatype='real' name='difference' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='client_completion_time' inline='true' name='federated.17vh8zq0axie5t1gmsffw1e42iqh' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='client_completion_time' name='textscan.1kio2wt0yvgwf818npupc02jh697'>
+            <connection class='textscan' directory='/Users/jannoelvero/Documents/Ironhack/week_6/Week_6_Project/data/cleaned' filename='client_completion_time.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1kio2wt0yvgwf818npupc02jh697' name='client_completion_time.csv' table='[client_completion_time#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+            <column datatype='integer' name='client_id' ordinal='0' />
+            <column datatype='string' name='Variation' ordinal='1' />
+            <column datatype='real' name='completion_minutes' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[client_completion_time.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₱&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_PH&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_id]</local-name>
+            <parent-name>[client_completion_time.csv]</parent-name>
+            <remote-alias>client_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[client_completion_time.csv_B87F5F88B9CE4DD0929C646308C701B6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variation]</local-name>
+            <parent-name>[client_completion_time.csv]</parent-name>
+            <remote-alias>Variation</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[client_completion_time.csv_B87F5F88B9CE4DD0929C646308C701B6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>completion_minutes</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[completion_minutes]</local-name>
+            <parent-name>[client_completion_time.csv]</parent-name>
+            <remote-alias>completion_minutes</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[client_completion_time.csv_B87F5F88B9CE4DD0929C646308C701B6]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Variation]' role='dimension' type='nominal' />
+      <column caption='client_completion_time.csv' datatype='table' name='[__tableau_internal_object_id__].[client_completion_time.csv_B87F5F88B9CE4DD0929C646308C701B6]' role='measure' type='quantitative' />
+      <column caption='Client Id' datatype='integer' name='[client_id]' role='dimension' type='ordinal' />
+      <column caption='Completion Minutes' datatype='real' name='[completion_minutes]' role='measure' type='quantitative' />
+      <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Variation)' hidden='true' name='[Action (Variation)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Variation]' />
+        </groupfilter>
+      </group>
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/tableau-temp/#TableauTemp_1dklwj70atvsla1fpr1u114pd3kg.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='08/26/2026 01:14:37 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>client_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[client_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>client_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>client_completion_time.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>32791</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[client_completion_time.csv_B87F5F88B9CE4DD0929C646308C701B6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Variation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Variation]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Variation</remote-alias>
+              <ordinal>1</ordinal>
+              <family>client_completion_time.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[client_completion_time.csv_B87F5F88B9CE4DD0929C646308C701B6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>completion_minutes</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[completion_minutes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>completion_minutes</remote-alias>
+              <ordinal>2</ordinal>
+              <family>client_completion_time.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1882</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[client_completion_time.csv_B87F5F88B9CE4DD0929C646308C701B6]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Variation:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Control&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Test&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='client_completion_time.csv' id='client_completion_time.csv_B87F5F88B9CE4DD0929C646308C701B6'>
+            <properties context=''>
+              <relation connection='textscan.1kio2wt0yvgwf818npupc02jh697' name='client_completion_time.csv' table='[client_completion_time#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+                  <column datatype='integer' name='client_id' ordinal='0' />
+                  <column datatype='string' name='Variation' ordinal='1' />
+                  <column datatype='real' name='completion_minutes' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='RQ1 + RQ2: The Same Boundary Moved in Both Directions'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontname='Benton Sans Book'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='funnel_boundaries' name='federated.0tlnkwc0kxt3251dn9bjr0xcfpbk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tlnkwc0kxt3251dn9bjr0xcfpbk'>
+            <column caption='Highlight' datatype='string' name='[Calculation_2748061812633600]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [boundary] = &quot;Start / Step 1&quot; THEN &quot;The boundary that moved&quot;&#10;ELSE &quot;Other boundaries&quot; END' />
+            </column>
+            <column caption='Boundary' datatype='string' name='[boundary]' role='dimension' type='nominal' />
+            <column caption='Difference' datatype='real' name='[difference]' role='measure' type='quantitative' />
+            <column caption='Direction' datatype='string' name='[direction]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_2748061812633600]' derivation='None' name='[none:Calculation_2748061812633600:nk]' pivot='key' type='nominal' />
+            <column-instance column='[boundary]' derivation='None' name='[none:boundary:nk]' pivot='key' type='nominal' />
+            <column-instance column='[direction]' derivation='None' name='[none:direction:nk]' pivot='key' type='nominal' />
+            <column-instance column='[difference]' derivation='Sum' name='[sum:difference:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='width' field='[federated.0tlnkwc0kxt3251dn9bjr0xcfpbk].[sum:difference:qk]' value='98' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0tlnkwc0kxt3251dn9bjr0xcfpbk].[none:boundary:nk]' value='122' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0tlnkwc0kxt3251dn9bjr0xcfpbk].[none:direction:nk]' value='112' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='color' scope='rows' value='#499894' />
+            <format attr='font-weight' scope='rows' value='bold' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='12' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0tlnkwc0kxt3251dn9bjr0xcfpbk].[none:Calculation_2748061812633600:nk]' />
+              <text column='[federated.0tlnkwc0kxt3251dn9bjr0xcfpbk].[sum:difference:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0tlnkwc0kxt3251dn9bjr0xcfpbk].[none:direction:nk] * [federated.0tlnkwc0kxt3251dn9bjr0xcfpbk].[sum:difference:qk])</rows>
+        <cols>[federated.0tlnkwc0kxt3251dn9bjr0xcfpbk].[none:boundary:nk]</cols>
+      </table>
+      <simple-id uuid='{9D33C958-2FB3-4CCE-A08E-CF55D2BF7AC1}' />
+    </worksheet>
+    <worksheet name='RQ1 Completion Rate: Control vs Test'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book'>Test Design Improves Completion Rate</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='client_kpi_analysis' name='federated.0i0p1xn0ow6q811f94ssc1sbdbe8' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0i0p1xn0ow6q811f94ssc1sbdbe8'>
+            <column caption='Completion Rate' datatype='real' name='[Calculation_1893878409637888]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(INT([completed])) / COUNT([client_id])' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal' />
+            <column caption='Client Id' datatype='integer' name='[client_id]' role='dimension' type='ordinal' />
+            <column caption='Completed' datatype='boolean' name='[completed]' role='dimension' type='nominal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1893878409637888]' derivation='User' name='[usr:Calculation_1893878409637888:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878409637888:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878409637888:qk]' value='p0.00%' />
+            <format attr='width' field='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]' value='240' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878409637888:qk]' value='p0.00%' />
+            <format attr='text-orientation' field='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878409637888:qk]' value='0' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878409637888:qk]</rows>
+        <cols>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]</cols>
+      </table>
+      <simple-id uuid='{A2645690-3703-4AF4-93FC-8E27E50FDCF8}' />
+    </worksheet>
+    <worksheet name='RQ2: Create the calculated field'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book'>Test Design Increases Step Back Behavior</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='client_kpi_analysis' name='federated.0i0p1xn0ow6q811f94ssc1sbdbe8' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0i0p1xn0ow6q811f94ssc1sbdbe8'>
+            <column caption='Step Back Rate' datatype='real' name='[Calculation_1893878411362305]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(INT([step_back_count] &gt; 0)) / COUNT([client_id])' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal' />
+            <column caption='Client Id' datatype='integer' name='[client_id]' role='dimension' type='ordinal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column caption='Step Back Count' datatype='integer' name='[step_back_count]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1893878411362305]' derivation='User' name='[usr:Calculation_1893878411362305:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878411362305:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878411362305:qk]' value='p0.00%' />
+            <format attr='width' field='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]' value='236' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878411362305:qk]' value='p0.00%' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878411362305:qk]</rows>
+        <cols>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]</cols>
+      </table>
+      <simple-id uuid='{676246A5-5317-4257-BC4A-1E14B94406B0}' />
+    </worksheet>
+    <worksheet name='RQ3 Completion Time: Control vs Test'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book'>Test Users Complete the Process Faster</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='client_completion_time' name='federated.17vh8zq0axie5t1gmsffw1e42iqh' />
+          </datasources>
+          <datasource-dependencies datasource='federated.17vh8zq0axie5t1gmsffw1e42iqh'>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal' />
+            <column caption='Completion Minutes' datatype='real' name='[completion_minutes]' role='measure' type='quantitative' />
+            <column-instance column='[completion_minutes]' derivation='Median' name='[med:completion_minutes:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[completion_minutes]' derivation='Sum' name='[sum:completion_minutes:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.17vh8zq0axie5t1gmsffw1e42iqh].[none:Variation:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.17vh8zq0axie5t1gmsffw1e42iqh].[sum:completion_minutes:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.17vh8zq0axie5t1gmsffw1e42iqh].[med:completion_minutes:qk]' value='n#,##0.00;-#,##0.00' />
+            <format attr='width' field='[federated.17vh8zq0axie5t1gmsffw1e42iqh].[none:Variation:nk]' value='253' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.17vh8zq0axie5t1gmsffw1e42iqh].[none:Variation:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.17vh8zq0axie5t1gmsffw1e42iqh].[med:completion_minutes:qk]</rows>
+        <cols>[federated.17vh8zq0axie5t1gmsffw1e42iqh].[none:Variation:nk]</cols>
+      </table>
+      <simple-id uuid='{652DA064-79FC-45A4-8FE8-857399CFF6F3}' />
+    </worksheet>
+    <worksheet name='RQ4: Average Step Back Events per Client'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book'>Navigation Friction Remains Higher in Test</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='client_completion_time' name='federated.17vh8zq0axie5t1gmsffw1e42iqh' />
+            <datasource caption='client_kpi_analysis' name='federated.0i0p1xn0ow6q811f94ssc1sbdbe8' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0i0p1xn0ow6q811f94ssc1sbdbe8'>
+            <column-instance column='[step_back_count]' derivation='Avg' name='[avg:step_back_count:qk]' pivot='key' type='quantitative' />
+            <column caption='Step Back Count' datatype='integer' name='[step_back_count]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.17vh8zq0axie5t1gmsffw1e42iqh'>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.17vh8zq0axie5t1gmsffw1e42iqh].[none:Variation:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>%all%</bucket>
+              <bucket>&quot;Control&quot;</bucket>
+              <bucket>&quot;Test&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[avg:step_back_count:qk]' value='n#,##0.000;-#,##0.000' />
+            <format attr='width' field='[federated.17vh8zq0axie5t1gmsffw1e42iqh].[none:Variation:nk]' value='245' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.17vh8zq0axie5t1gmsffw1e42iqh].[none:Variation:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[avg:step_back_count:qk]</rows>
+        <cols>[federated.17vh8zq0axie5t1gmsffw1e42iqh].[none:Variation:nk]</cols>
+      </table>
+      <simple-id uuid='{54396822-A8B6-43B4-8694-E8C4BDF4B63A}' />
+    </worksheet>
+    <worksheet name='RQ5 Funnel Performance'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book'>Funnel Gains Are Concentrated at the Initial Stage</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rq5_funnel_summary' name='federated.093pwuw1iuceaq1c87y0e0dh5fvi' />
+          </datasources>
+          <datasource-dependencies datasource='federated.093pwuw1iuceaq1c87y0e0dh5fvi'>
+            <column caption='Conversion Rate %' datatype='real' name='[Conversion Rate]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Transition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal' />
+            <column-instance column='[Transition]' derivation='None' name='[none:Transition:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Conversion Rate]' derivation='Sum' name='[sum:Conversion Rate:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.093pwuw1iuceaq1c87y0e0dh5fvi].[sum:Conversion Rate:qk]' value='n#,##0.00;-#,##0.00' />
+            <format attr='text-format' data-class='subtotal' field='[federated.093pwuw1iuceaq1c87y0e0dh5fvi].[sum:Conversion Rate:qk]' value='p0.00%' />
+            <format attr='width' field='[federated.093pwuw1iuceaq1c87y0e0dh5fvi].[none:Variation:nk]' value='96' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height' field='[federated.093pwuw1iuceaq1c87y0e0dh5fvi].[none:Transition:nk]' value='21' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.093pwuw1iuceaq1c87y0e0dh5fvi].[none:Variation:nk]' />
+              <text column='[federated.093pwuw1iuceaq1c87y0e0dh5fvi].[sum:Conversion Rate:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='11' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.093pwuw1iuceaq1c87y0e0dh5fvi].[sum:Conversion Rate:qk]</rows>
+        <cols>([federated.093pwuw1iuceaq1c87y0e0dh5fvi].[none:Transition:nk] / [federated.093pwuw1iuceaq1c87y0e0dh5fvi].[none:Variation:nk])</cols>
+      </table>
+      <simple-id uuid='{650C2501-F594-4FCF-8831-B0D21B546725}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#ddebf0' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98476' id='15' param='horz' type-v2='layout-flow' w='99166' x='417' y='762'>
+            <zone h='98476' id='13' type-v2='layout-basic' w='99166' x='417' y='762'>
+              <zone h='98476' id='3' param='vert' type-v2='layout-flow' w='99166' x='417' y='762'>
+                <zone forceUpdate='true' h='4000' id='6' type-v2='text' w='99166' x='417' y='762'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book' fontsize='20'>Vanguard A/B Test Performance Dashboard</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='3048' id='7' type-v2='text' w='99166' x='417' y='4762'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book' fontsize='14'>RQ6: Should Vanguard Deploy the New Digital Design?</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='37513' id='32' name='RQ1 Completion Rate: Control vs Test' w='20249' x='5107' y='12232' />
+        <zone h='41998' id='34' name='RQ2: Create the calculated field' w='20903' x='71318' y='10601' />
+        <zone h='39959' id='35' name='RQ3 Completion Time: Control vs Test' w='19715' x='37827' y='11825' />
+        <zone h='36290' id='37' name='RQ5 Funnel Performance' w='39868' x='3805' y='59939' />
+        <zone h='35984' id='39' name='RQ1 + RQ2: The Same Boundary Moved in Both Directions' w='43093' x='51034' y='60041' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1600' minheight='1600' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='59' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='58' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+                <zone forceUpdate='true' h='4281' id='6' type-v2='text' w='99050' x='475' y='815'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book' fontsize='20'>Vanguard A/B Test Performance Dashboard</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3261' id='7' type-v2='text' w='99050' x='475' y='5096'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Benton Sans Book' fontsize='14'>RQ6: Should Vanguard Deploy the New Digital Design?</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='41998' id='34' is-fixed='true' name='RQ2: Create the calculated field' w='20903' x='71318' y='10601'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='39959' id='35' is-fixed='true' name='RQ3 Completion Time: Control vs Test' w='19715' x='37827' y='11825'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='37513' id='32' is-fixed='true' name='RQ1 Completion Rate: Control vs Test' w='20249' x='5107' y='12232'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36290' id='37' is-fixed='true' name='RQ5 Funnel Performance' w='39868' x='3805' y='59939'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='35984' id='39' is-fixed='true' name='RQ1 + RQ2: The Same Boundary Moved in Both Directions' w='43093' x='51034' y='60041'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{FA41716C-7E52-46C9-AA28-AC5B5F01E88E}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 2'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98380' id='3' param='horz' type-v2='layout-flow' w='99064' x='468' y='810'>
+            <zone h='98380' id='5' name='RQ2: Create the calculated field' w='50058' x='468' y='810'>
+              <layout-cache cell-count-w='2' minheight='182' non-cell-size-w='81' type-h='scalable' type-w='cell' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='98380' id='6' name='RQ4: Average Step Back Events per Client' w='49004' x='50526' y='810'>
+              <layout-cache cell-count-w='2' non-cell-size-w='63' type-h='fixed' type-w='cell' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='42' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98380' id='41' param='vert' type-v2='layout-flow' w='99064' x='468' y='810'>
+                <zone fixed-size='280' h='98380' id='5' is-fixed='true' name='RQ2: Create the calculated field' w='50058' x='468' y='810'>
+                  <layout-cache cell-count-w='2' minheight='182' non-cell-size-w='81' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='98380' id='6' is-fixed='true' name='RQ4: Average Step Back Events per Client' w='49004' x='50526' y='810'>
+                  <layout-cache cell-count-w='2' non-cell-size-w='63' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{E47411F4-6D40-4BB8-B158-B4E79611B7F0}' />
+    </dashboard>
+    <dashboard name='Story 1' type='storyboard'>
+      <style>
+        <style-rule element='story-description'>
+          <format attr='background-color' id='story-description_6' value='#00000000' />
+          <format attr='border-width' id='story-description_6' value='0' />
+          <format attr='border-style' id='story-description_6' value='none' />
+          <format attr='background-color' id='story-description_7' value='#00000000' />
+          <format attr='border-width' id='story-description_7' value='0' />
+          <format attr='border-style' id='story-description_7' value='none' />
+          <format attr='background-color' id='story-description_8' value='#00000000' />
+          <format attr='border-width' id='story-description_8' value='0' />
+          <format attr='border-style' id='story-description_8' value='none' />
+          <format attr='background-color' id='story-description_20' value='#00000000' />
+          <format attr='border-width' id='story-description_20' value='0' />
+          <format attr='border-style' id='story-description_20' value='none' />
+          <format attr='background-color' id='story-description_21' value='#00000000' />
+          <format attr='border-width' id='story-description_21' value='0' />
+          <format attr='border-style' id='story-description_21' value='none' />
+          <format attr='background-color' id='story-description_22' value='#00000000' />
+          <format attr='border-width' id='story-description_22' value='0' />
+          <format attr='border-style' id='story-description_22' value='none' />
+          <format attr='background-color' id='story-description_10' value='#00000000' />
+          <format attr='border-width' id='story-description_10' value='0' />
+          <format attr='border-style' id='story-description_10' value='none' />
+          <format attr='background-color' id='story-description_24' value='#00000000' />
+          <format attr='border-width' id='story-description_24' value='0' />
+          <format attr='border-style' id='story-description_24' value='none' />
+          <format attr='background-color' id='story-description_26' value='#00000000' />
+          <format attr='border-width' id='story-description_26' value='0' />
+          <format attr='border-style' id='story-description_26' value='none' />
+          <format attr='background-color' id='story-description_25' value='#00000000' />
+          <format attr='border-width' id='story-description_25' value='0' />
+          <format attr='border-style' id='story-description_25' value='none' />
+          <format attr='background-color' id='story-description_23' value='#00000000' />
+          <format attr='border-width' id='story-description_23' value='0' />
+          <format attr='border-style' id='story-description_23' value='none' />
+          <format attr='background-color' id='story-description_11' value='#00000000' />
+          <format attr='border-width' id='story-description_11' value='0' />
+          <format attr='border-style' id='story-description_11' value='none' />
+          <format attr='background-color' id='story-description_29' value='#00000000' />
+          <format attr='border-width' id='story-description_29' value='0' />
+          <format attr='border-style' id='story-description_29' value='none' />
+          <format attr='background-color' id='story-description_27' value='#00000000' />
+          <format attr='border-width' id='story-description_27' value='0' />
+          <format attr='border-style' id='story-description_27' value='none' />
+          <format attr='background-color' id='story-description_28' value='#00000000' />
+          <format attr='border-width' id='story-description_28' value='0' />
+          <format attr='border-style' id='story-description_28' value='none' />
+          <format attr='background-color' id='story-description_30' value='#00000000' />
+          <format attr='border-width' id='story-description_30' value='0' />
+          <format attr='border-style' id='story-description_30' value='none' />
+          <format attr='background-color' id='story-description_31' value='#00000000' />
+          <format attr='border-width' id='story-description_31' value='0' />
+          <format attr='border-style' id='story-description_31' value='none' />
+          <format attr='background-color' id='story-description_32' value='#00000000' />
+          <format attr='border-width' id='story-description_32' value='0' />
+          <format attr='border-style' id='story-description_32' value='none' />
+          <format attr='background-color' id='story-description_14' value='#00000000' />
+          <format attr='border-width' id='story-description_14' value='0' />
+          <format attr='border-style' id='story-description_14' value='none' />
+          <format attr='border-width' id='story-description_16' value='0' />
+          <format attr='border-style' id='story-description_16' value='none' />
+          <format attr='border-width' id='story-description_17' value='0' />
+          <format attr='border-style' id='story-description_17' value='none' />
+          <format attr='background-color' id='story-description_15' value='#00000000' />
+          <format attr='border-width' id='story-description_15' value='0' />
+          <format attr='border-style' id='story-description_15' value='none' />
+          <format attr='background-color' id='story-description_16' value='#f9f8f7be' />
+          <format attr='background-color' id='story-description_17' value='#f9f8f7be' />
+          <format attr='background-color' id='story-description_33' value='#00000000' />
+          <format attr='border-width' id='story-description_33' value='0' />
+          <format attr='border-style' id='story-description_33' value='none' />
+          <format attr='background-color' id='story-description_18' value='#00000000' />
+          <format attr='border-width' id='story-description_18' value='0' />
+          <format attr='border-style' id='story-description_18' value='none' />
+          <format attr='background-color' id='story-description_34' value='#00000000' />
+          <format attr='border-width' id='story-description_34' value='0' />
+          <format attr='border-style' id='story-description_34' value='none' />
+          <format attr='background-color' id='story-description_36' value='#00000000' />
+          <format attr='border-width' id='story-description_36' value='0' />
+          <format attr='border-style' id='story-description_36' value='none' />
+          <format attr='background-color' id='story-description_35' value='#00000000' />
+          <format attr='border-width' id='story-description_35' value='0' />
+          <format attr='border-style' id='story-description_35' value='none' />
+          <format attr='background-color' id='story-description_37' value='#00000000' />
+          <format attr='border-width' id='story-description_37' value='0' />
+          <format attr='border-style' id='story-description_37' value='none' />
+          <format attr='background-color' id='story-description_38' value='#00000000' />
+          <format attr='border-width' id='story-description_38' value='0' />
+          <format attr='border-style' id='story-description_38' value='none' />
+          <format attr='background-color' id='story-description_19' value='#00000000' />
+          <format attr='border-width' id='story-description_19' value='0' />
+          <format attr='border-style' id='story-description_19' value='none' />
+          <format attr='background-color' id='story-description_39' value='#00000000' />
+          <format attr='border-width' id='story-description_39' value='0' />
+          <format attr='border-style' id='story-description_39' value='none' />
+        </style-rule>
+      </style>
+      <size maxheight='964' maxwidth='1016' minheight='964' minwidth='1016' />
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98340' id='1' param='vert' removable='false' type-v2='layout-flow' w='98426' x='787' y='830'>
+            <zone fixed-size='113' h='11722' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98426' x='787' y='830' />
+            <zone h='86618' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98426' x='787' y='12552'>
+              <flipboard active-id='15' nav-type='caption' show-nav-arrows='true'>
+                <story-points>
+                  <story-point caption='Does the Redesigned Digital Experience Actually Solve the Customer Problem?' captured-sheet='title slide' id='1' />
+                  <story-point caption='Business Background' captured-sheet='' id='2' />
+                  <story-point caption='Purpose' captured-sheet='' id='3' />
+                  <story-point caption='Voice of the Customer' captured-sheet='' id='4' />
+                  <story-point caption='The Central Business Question' captured-sheet='' id='6' />
+                  <story-point caption='RQ1: ' captured-sheet='RQ1 Completion Rate: Control vs Test' id='7' />
+                  <story-point caption='RQ3' captured-sheet='RQ3 Completion Time: Control vs Test' id='9' />
+                  <story-point caption='RQ2&amp;4' captured-sheet='Dashboard 2' id='10'>
+                    <capturedDeltas>
+                      <worksheet name='RQ2: Create the calculated field'>
+                        <selection-collection>
+                          <tuple-selection>
+                            <tuple-reference>
+                              <tuple-descriptor>
+                                <pane-descriptor>
+                                  <x-fields>
+                                    <field>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]</field>
+                                  </x-fields>
+                                  <y-fields>
+                                    <field>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878411362305:qk]</field>
+                                  </y-fields>
+                                </pane-descriptor>
+                                <columns>
+                                  <field>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]</field>
+                                  <field>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878411362305:qk]</field>
+                                </columns>
+                              </tuple-descriptor>
+                              <tuple>
+                                <value>&quot;Control&quot;</value>
+                                <value>0.2610062893081761</value>
+                              </tuple>
+                            </tuple-reference>
+                            <tuple-reference>
+                              <tuple-descriptor>
+                                <pane-descriptor>
+                                  <x-fields>
+                                    <field>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]</field>
+                                  </x-fields>
+                                  <y-fields>
+                                    <field>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878411362305:qk]</field>
+                                  </y-fields>
+                                </pane-descriptor>
+                                <columns>
+                                  <field>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]</field>
+                                  <field>[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[usr:Calculation_1893878411362305:qk]</field>
+                                </columns>
+                              </tuple-descriptor>
+                              <tuple>
+                                <value>&quot;Test&quot;</value>
+                                <value>0.33413675467220411</value>
+                              </tuple>
+                            </tuple-reference>
+                          </tuple-selection>
+                        </selection-collection>
+                      </worksheet>
+                    </capturedDeltas>
+                  </story-point>
+                  <story-point caption='RQ5' captured-sheet='RQ5 Funnel Performance' id='11' />
+                  <story-point caption='RQ1&amp;2' captured-sheet='RQ1 + RQ2: The Same Boundary Moved in Both Directions' id='17' />
+                  <story-point caption='One Redesign, Two Sides of the Evidence' captured-sheet='Dashboard 1' id='12' />
+                  <story-point caption='RQ6: Executive Decision' captured-sheet='' id='13' />
+                  <story-point caption='Team Recommendation' captured-sheet='' id='14' />
+                  <story-point caption='Thank you' captured-sheet='closing' id='15' />
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='30498' hidden='true' id='6' story-point-id='1' type-v2='text' w='99311' x='295' y='18465'>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='30'>Transforming Vanguard’s Digital Client Experience</run>
+            <run>Æ&#10;&#10;</run>
+            <run bold='true' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='16'>Does the Redesigned Experience Deliver Better Client Outcomes?</run>
+            <run>Æ&#10;&#10;&#10;</run>
+            <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>by</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>Lara, Jan, and Paul</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='15' italic='true'>Business Analysts</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='41701' hidden='true' id='7' story-point-id='2' type-v2='text' w='98524' x='1181' y='15664'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='60'>90%</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run bold='true' fontalignment='0' fontcolor='#96323c' fontname='Benton Sans Book'>of client contact with 20 million clients is digital</run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book'>Vanguard introduced a redesigned digital experience to improve how clients navigate and complete an important online process. The redesign was tested against the existing experience through an A/B experiment, comparing </run>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book'>Control</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book'> and </run>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book'>Test</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book'> groups.</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='10477' hidden='true' id='8' story-point-id='2' type-v2='text' w='25787' x='35630' y='62656'>
+          <formatted-text>
+            <run bold='true' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='32'>$4.2T</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#666666' fontname='Benton Sans Book' fontsize='13'>under management, Feb 2017</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='40975' hidden='true' id='10' story-point-id='3' type-v2='text' w='86811' x='6004' y='17635'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='24'>From a New Design to a Measurable Business Outcome</run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run bold='true' fontalignment='0' fontcolor='#000000' fontname='Benton Sans Book' fontsize='15'>Purpose</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book'>Evaluate whether the redesigned digital experience improves client outcomes while maintaining a clear and efficient customer journey.</run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='5498' hidden='true' id='11' story-point-id='4' type-v2='text' w='81299' x='8661' y='19191'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='24'>But What Were Clients Actually Experiencing?</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='38071' hidden='true' id='14' story-point-id='6' type-v2='text' w='74114' x='10925' y='31846'>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='28'>Does the Redesigned Digital Experience Actually Solve the Customer Problem?</run>
+            <run>Æ&#10;&#10;</run>
+            <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='20'>And is it ready for deployment?</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='4979' hidden='true' id='15' story-point-id='13' type-v2='text' w='90256' x='4331' y='21266'>
+          <formatted-text>
+            <run bold='true' fontcolor='#666666' fontname='Benton Sans Book' fontsize='24'>Should Vanguard Deploy the New Digital Experience?</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='50311' hidden='true' id='16' story-point-id='13' type-v2='text' w='39370' x='3642' y='30498'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='48'>1</run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='18'>Deploy the New Design</run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='15'>Rationale:</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='15'>-Higher completion</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='15'>-Faster completion</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='15'>-Strong initial funnel improvement</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='15'>-Monitor and correct navigation friction after deployment</run>
+            <run fontalignment='0'>Æ&#10;</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='50622' hidden='true' id='17' story-point-id='13' type-v2='text' w='42028' x='51575' y='29979'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='48'>2</run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='18'>Optimize Before Full Deployment</run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='15'>Rationale:</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='15'>-Preserve successful Test elements</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='15'>-Address Start to Step 1 friction</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='15'>-Reduce backward navigation</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='15'>-Validate improvements before full rollout</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='9751' hidden='true' id='18' story-point-id='14' type-v2='text' w='85827' x='6398' y='19502'>
+          <formatted-text>
+            <run bold='true' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='31'>Deploy — after fixing the first screen</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='24481' id='19' story-point-id='15' type-v2='text' w='57677' x='23130' y='29668'>
+          <formatted-text>
+            <run bold='true' fontcolor='#96323c' fontsize='40'>Thank you!</run>
+            <run>&#10;&#10;QR Scan for company email??&#10;&#10;</run>
+            <run fontcolor='#898989' fontname='Menlo' fontsize='12'>github.com/jannoelvero/Week_6_Project</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='7884' hidden='true' id='20' story-point-id='2' type-v2='text' w='24606' x='-394' y='64108'>
+          <formatted-text>
+            <run bold='true' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='32'>10M</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#666666' fontname='Benton Sans Book' fontsize='13'>phone calls in 2016</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='7884' hidden='true' id='21' story-point-id='2' type-v2='text' w='24902' x='73130' y='64212'>
+          <formatted-text>
+            <run bold='true' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='32'>30+ min</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#666666' fontname='Benton Sans Book' fontsize='13'>phone wait times, March 2017</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' h='8817' hidden='true' id='22' story-point-id='2' type-v2='text' w='73228' x='295' y='93361'>
+          <formatted-text>
+            <run fontalignment='0' fontcolor='#b4b4b4' fontname='Benton Sans Book' fontsize='9'>Sources: InvestmentNews, 16 Feb 2017 · Philadelphia Inquirer, 31 Mar 2017 · Vanguard announcement via VISTA.Today, Nov 2016</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='7780' hidden='true' id='23' story-point-id='3' type-v2='text' w='22638' x='6201' y='56432'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='16'>Completion - RQ1</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='13'>Did more clients finish?</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='6846' hidden='true' id='24' story-point-id='3' type-v2='text' w='19587' x='51476' y='56328'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='16'>Efficiency - RQ3</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='13'>Did they finish faster?</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='4876' hidden='true' id='25' story-point-id='3' type-v2='text' w='28543' x='6004' y='76556'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='16' lmargin='600' rmargin='600'>Navigation - RQ2</run>
+            <run fontalignment='0' lmargin='600' rmargin='600'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='13' lmargin='600' rmargin='600'>Did they move backwards more?</run>
+            <run fontalignment='0' lmargin='600' rmargin='600'>Æ&#10;</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='6535' hidden='true' id='26' story-point-id='3' type-v2='text' w='27657' x='51181' y='74689'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='16'>Funnel - RQ5</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='13'>Where in the process did it change?</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='28423' hidden='true' id='27' story-point-id='4' type-v2='text' w='38189' x='8858' y='28112'>
+          <formatted-text>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='18' italic='true'>&quot;I use the Vanguard funds while holding my nose at the web-site and trying to avoid the phone lines as much as possible.&quot;</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='2'>Æ&#10;</run>
+            <run fontalignment='2' fontcolor='#898989' fontname='Benton Sans Book' fontsize='12'>rob, Bogleheads forum, September 2014</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' h='3320' hidden='true' id='28' story-point-id='4' type-v2='text' w='66043' x='34449' y='95228'>
+          <formatted-text>
+            <run fontalignment='0' fontcolor='#898989' fontname='Benton Sans Book' fontsize='9'>Source: Bogleheads forum. A public forum is self-selected, so these comments show a mechanism, not its frequency</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='28216' hidden='true' id='29' story-point-id='4' type-v2='text' w='35630' x='53937' y='29357'>
+          <formatted-text>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='18' italic='true'>&quot;It requires way too much digging to find the most basic info, if you can find it at all.&quot;</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='2'>Æ&#10;</run>
+            <run fontalignment='2' fontcolor='#898989' fontname='Benton Sans Book' fontsize='11'>dhectorg, November 2016</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='13797' hidden='true' id='30' story-point-id='4' type-v2='text' w='9843' x='591' y='26037'>
+          <formatted-text>
+            <run bold='true' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='72'>“</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='14004' hidden='true' id='31' story-point-id='4' type-v2='text' w='9843' x='86319' y='81846'>
+          <formatted-text>
+            <run bold='true' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='72'>”</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='25519' hidden='true' id='32' story-point-id='4' type-v2='text' w='84547' x='7776' y='61411'>
+          <formatted-text>
+            <run fontalignment='0' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='22' italic='true'>&quot;The site is poorly designed… That combined with customer service issues may lead me to take my Vanguard funds elsewhere.&quot;</run>
+            <run fontalignment='2'>Æ&#10;</run>
+            <run fontalignment='2' fontcolor='#898989' fontname='Benton Sans Book' fontsize='11'>michaeljc70, November 2016</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='4979' hidden='true' id='33' story-point-id='13' type-v2='text' w='73130' x='13091' y='86411'>
+          <formatted-text>
+            <run fontcolor='#96323c' fontname='Benton Sans Book' fontsize='16' italic='true'>Both are defensible. The evidence points to one.</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='17427' hidden='true' id='34' story-point-id='14' type-v2='text' w='22835' x='8661' y='34025'>
+          <formatted-text>
+            <run bold='true' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='26'>+3.71 pp</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#666666' fontname='Benton Sans Book' fontsize='12'>completion rate</run>
+            <run fontalignment='0'>Æ&#10;</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' h='8402' hidden='true' id='35' story-point-id='14' type-v2='text' w='78740' x='13583' y='50415'>
+          <formatted-text>
+            <run fontalignment='0' fontcolor='#666666' fontname='Benton Sans Book' fontsize='16'>Both the gain and the cost are at Start → Step 1. Fix that screen, then roll out.</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='3734' hidden='true' id='36' story-point-id='14' type-v2='text' w='59252' x='21358' y='61929'>
+          <formatted-text>
+            <run fontcolor='#898989' fontname='Benton Sans Book' fontsize='12'>Completion gain holds after Holm–Bonferroni correction for multiple testing.</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='10685' hidden='true' id='37' story-point-id='14' type-v2='text' w='18898' x='40846' y='37033'>
+          <formatted-text>
+            <run bold='true' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='26'>34 sec</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#666666' fontname='Benton Sans Book' fontsize='12'>faster per client</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='8506' hidden='true' id='38' story-point-id='14' type-v2='text' w='21063' x='68209' y='38589'>
+          <formatted-text>
+            <run bold='true' fontcolor='#96323c' fontname='Benton Sans Book' fontsize='26'>+7.31 pp</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#666666' fontname='Benton Sans Book'>step back rate</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='3112' id='39' story-point-id='15' type-v2='text' w='23917' x='39567' y='78838'>
+          <formatted-text>
+            <run fontcolor='#666666' fontname='Benton Sans Book'>Lara · Jan · Paul</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <simple-id uuid='{5596566F-69C6-4B28-A3C3-A85F4DF88C52}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='closing'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='43017' id='3' is-scaled='1' param='Image/vanguard-group-logo.png' type-v2='bitmap' w='62696' x='20099' y='38838' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='21' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98258' id='20' param='vert' type-v2='layout-flow' w='98942' x='529' y='871'>
+                <zone fixed-size='280' h='43017' id='3' is-fixed='true' is-scaled='1' param='Image/vanguard-group-logo.png' type-v2='bitmap' w='62696' x='20099' y='38838'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{3A709ABE-85A0-4080-A9D2-FCE3E50E0886}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='title slide'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='43017' id='3' is-scaled='1' param='Image/vanguard-group-logo.png' type-v2='bitmap' w='62696' x='20513' y='49032' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='21' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98258' id='20' param='vert' type-v2='layout-flow' w='98942' x='529' y='871'>
+                <zone fixed-size='280' h='43017' id='3' is-fixed='true' is-scaled='1' param='Image/vanguard-group-logo.png' type-v2='bitmap' w='62696' x='20513' y='49032'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{91A0C705-928E-48B9-82CE-345ED23E8D35}' />
+    </dashboard>
+  </dashboards>
+  <windows pres-mode='true' source-height='114'>
+    <window class='worksheet' name='RQ1 Completion Rate: Control vs Test'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2170BB75-E505-4ED4-A7CC-39BF4DE21C49}' />
+    </window>
+    <window class='worksheet' name='RQ2: Create the calculated field'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0i0p1xn0ow6q811f94ssc1sbdbe8].[none:Variation:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{90CAE247-FD97-4238-A59A-658C1BE97B42}' />
+    </window>
+    <window class='worksheet' name='RQ3 Completion Time: Control vs Test'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.17vh8zq0axie5t1gmsffw1e42iqh].[none:Variation:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{04DEB809-C935-4E27-86D2-342C8EFDA0E8}' />
+    </window>
+    <window class='worksheet' name='RQ4: Average Step Back Events per Client'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.17vh8zq0axie5t1gmsffw1e42iqh].[none:Variation:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CF7F4204-6A80-429C-95BD-7195ACF12B46}' />
+    </window>
+    <window class='worksheet' name='RQ5 Funnel Performance'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.093pwuw1iuceaq1c87y0e0dh5fvi].[none:Variation:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4A1E144D-419D-4996-AE03-CB7D6495383F}' />
+    </window>
+    <window class='worksheet' name='RQ1 + RQ2: The Same Boundary Moved in Both Directions'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A66C6551-DC1A-45CA-B188-314CD5E3603A}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='RQ1 + RQ2: The Same Boundary Moved in Both Directions'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='RQ1 Completion Rate: Control vs Test'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='RQ2: Create the calculated field'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='RQ3 Completion Time: Control vs Test'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='RQ5 Funnel Performance'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='34' />
+      <device-preview selected='Desktop' />
+      <simple-id uuid='{31F93C27-580E-4D6F-A8E2-3E4AB7146AD5}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Story 1'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{9A3B16E0-0676-415B-8039-CEF348C3E711}' />
+    </window>
+    <window class='dashboard' name='Dashboard 2'>
+      <viewpoints>
+        <viewpoint name='RQ2: Create the calculated field'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='RQ4: Average Step Back Events per Client'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{55701268-6D31-4C09-9903-1918595116C2}' />
+    </window>
+    <window class='dashboard' name='title slide'>
+      <viewpoints />
+      <active id='3' />
+      <simple-id uuid='{82E390F8-9AF7-428A-AD16-82BA90498F19}' />
+    </window>
+    <window class='dashboard' name='closing'>
+      <viewpoints />
+      <active id='3' />
+      <simple-id uuid='{E5A87DA4-54E9-454D-92EE-63CB2A670A9A}' />
+    </window>
+  </windows>
+</workbook>
